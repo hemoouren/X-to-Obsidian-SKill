@@ -49,7 +49,7 @@ Obsidian Web Clipper
 
 这个 Skill 的目标不是帮你收藏推文。
 
-而是帮助��：
+而是帮助你：
 
 **发现高价值内容 → 自动归档 → 建立长期知识资产。**
 
@@ -71,7 +71,7 @@ https://obsidian.md
 
 安装后创建或打开一个 Vault。
 
-![Obsidian Vault](images/obsidian.png)
+![Obsidian Vault](examples/images/obsidian.png)
 
 ---
 
@@ -81,7 +81,7 @@ https://obsidian.md
 
 https://obsidian.md/clipper
 
-![Obsidian Web Clipper](images/obsidian2.png)
+![Obsidian Web Clipper](examples/images/obsidian2.png)
 
 支持：
 
