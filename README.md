@@ -6,6 +6,8 @@
 
 专为内容创作者、独立开发者、产品经理、运营人员打造的对标研究工具。
 
+![X To Obsidian Skill - 工作流程](examples/images/01-workflow-overview.png)
+
 ---
 
 ## 功能预览
@@ -122,7 +124,7 @@ Obsidian 已启动
 
 # 核心能力
 
-![X To Obsidian Skill - 工作流程](examples/images/01-workflow-overview.png)
+![X To Obsidian Skill - 工作流程 4](examples/images/01-workflow-overview%204.png)
 
 ## 高浏览量筛选
 
