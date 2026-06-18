@@ -1,427 +1,402 @@
-# X 爆款推文素材库
+# X To Obsidian Skill
 
-> 把 X（Twitter）上的信息流，变成 Obsidian 里的长期资产。
->
-> 自动筛选 | 批量采集 | 智能分类 | 元数据完整 | Codex Skill
+> 发现爆款推文 · 自动归档知识库
 
----
+自动筛选高浏览量 X（Twitter）推文，并通过官方 Obsidian Web Clipper 一键同步到你的 Obsidian 知识库。
 
-## 这个仓库是什么
+专为内容创作者、独立开发者、产品经理、运营人员打造的对标研究工具。
 
-X 爆款推文素材库是一个 Codex Skill，用来指导 AI Agent 自动从 X（Twitter）采集高表现推文，并同步到 Obsidian 知识库。
-
-它不是简单的爬虫工具，也不是通用的内容收藏器。它的核心目标是：**先理解你的研究目的，再按浏览量智能筛选，把碎片化的推文变成结构化的素材资产。**
-
-特别适合：
-
-- 内容创作者做对标分析
-- 独立开发者研究产品增长
-- AI 创业者跟踪行业动态
-- 运营人员建立竞品库
-- 研究人员积累长期资料
-
-一句话：**让你不再手动翻推特，而是把真正有价值的内容，自动沉淀进自己的知识库。**
+![X To Obsidian Skill - 工作流程](examples/images/01-workflow-overview.png)
 
 ---
 
-## 适合谁用
-
-### 特别适合
-
-- **内容创作者** — 分析爆款选题、研究标题结构、拆解表达方式、积累创作灵感
-- **独立开发者** — 研究海外产品发布、分析产品增长案例、收集 Launch 内容、积累运营素材
-- **AI 创业者** — 跟踪头部 AI 博主、收集产品案例、整理市场趋势、沉淀行业知识库
-- **运营人员** — 建立竞品内容库、监控行业动态、分析高互动内容
-- **用 Codex 做内容生产的人** — 希望稳定复用一套工作流、自动化重复劳动
-
-### 不适合
-
-- 想要通用爬虫、数据分析、制作数据表的人
-- 想要储存所有推文、不做任何筛选的人
-- 想要实时监控、推送通知的人
-- 不用 Obsidian 的人
-
----
-
-## 它会产出什么
-
-### 默认输出
-
-- 按浏览量筛选的推文列表（支持 10万+、50万+、100万+ 等多档位）
-- 多个博主批量采集和分类
-- 自动创建 Obsidian 文件夹结构（按博主名 → 按主题分类）
-- 每篇推文的完整元数据：
-
-```
-tweet_id: 
-views: 
-likes: 
-retweets: 
-author: 
-handle: 
-publish_time: 
-tweet_url:
-```
-
-- 最终 Markdown 文件，保存到 Obsidian 指定目录
-
-### 默认不输出
-
-- 所有推文无差别采集
-- 实时推送或通知机制
-- 数据可视化或统计报表
-- 推文内容的本地图片缓存
-
----
-
-## 核心能力
-
-### 1. 浏览量智能筛选
-
-支持多档位浏览量设定：
-- 10万+
-- 50万+
-- 100万+
-
-**为什么重要？** 只保留被市场验证过的内容，避免浪费时间在没人看的推文上。
-
-### 2. 多博主批量采集
-
-一次性处理多个博主：
-```
-https://x.com/levelsio
-https://x.com/dannypostmaa
-https://x.com/paulg
-```
-
-支持单次采集 20-100+ 篇推文。
-
-### 3. 自动创建 Obsidian 文件夹结构
-
-智能分类，无需手动整理：
-
-```
-📁 Levelsio
- ├── AI Startup Ideas.md
- ├── Build In Public.md
- ├── SaaS 增长案例.md
-
-📁 Danny Postma
- ├── Growth Hack.md
- ├── Product Launch.md
-```
-
-### 4. 完整元数据记录
-
-每条推文自动附加：
-- 推文 ID、浏览量、点赞、转发数
-- 作者名和 handle
-- 发布时间、推文链接
-
-**为什么重要？** 方便后续检索、分析、溯源。
-
-### 5. 长期素材库建设
-
-持续积累高质量内容资产：
-
-```
-Obsidian
- ├── AI
- │   ├── Startup
- │   ├── 工具类
- │   └── 融资新闻
- ├── SaaS
- │   ├── 增长
- │   └── 变现
- ├── Marketing
- ├── Indie Hacker
- ├── Growth
- └── Startup
-```
-
----
-
-## 示例效果
-
-### 爆款推文库示例
-![爆款推文库示例](examples/images/01-viral-tweets-example.png)
-
-### 多博主分类示例
-![多博主分类示例](examples/images/02-multi-author-organization.png)
-
-### Obsidian 文件结构示例
-![Obsidian 文件结构示例](examples/images/03-obsidian-structure.png)
-
-### 推文元数据示例
-![推文元数据示例](examples/images/04-tweet-metadata.png)
-
-### 长期素材库示例
-![长期素材库示例](examples/images/05-long-term-library.png)
-
-这些是工作流程示意图，展示最终 Obsidian 中的实际效果。
-
----
-
-## 安装
-
-克隆仓库：
-
-```bash
-git clone https://github.com/hemoouren/X-to-Obsidian-SKill.git
-cd X-to-Obsidian-SKill
-```
-
-复制 skill 到 Codex skills 目录：
-
-```bash
-mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
-cp -R ./X-to-Obsidian-SKill "${CODEX_HOME:-$HOME/.codex}/skills/"
-```
-
-安装后，在 Codex 里使用：
+## 功能预览
 
 ```text
-Use $X-to-Obsidian-SKill 抓取这些博主的爆款推文，同步到 Obsidian
-```
-
----
-
-## 怎么用
-
-### 抓取单个博主
-
-```text
-Use $X-to-Obsidian-SKill 
-
-抓取这个博主最近浏览量超过10万的推文
-
-https://x.com/levelsio
-
-保存前20篇到 Obsidian
-```
-
-### 指定保存数量
-
-```text
-Use $X-to-Obsidian-SKill 
-
-抓取这个博主浏览量超过10万的推文
-
-https://x.com/dannypostmaa
-
-保存前30篇，自动分类
-```
-
-### 多个博主批量采集
-
-```text
-Use $X-to-Obsidian-SKill 
-
-抓取以下博主浏览量超过20万的内容：
-
-https://x.com/levelsio
-https://x.com/dannypostmaa
-https://x.com/paulg
-
-按主题自动分类保存
-```
-
-### 构建行业素材库
-
-```text
-Use $X-to-Obsidian-SKill 
-
-抓取这些 AI 博主浏览量超过50万的内容：
-
-https://x.com/levelsio
-https://x.com/lex_fridman
-https://x.com/ylecun
-
-为每个博主保存20篇，建立 AI 行业素材库
-```
-
-### 只做采集规划
-
-```text
-Use $X-to-Obsidian-SKill 
-
-先不要生成。请分析下面这些博主适合采集哪些主题，
-输出推荐的浏览量筛选档位和文件夹分类结构。
-
-https://x.com/levelsio
-https://x.com/dannypostmaa
-https://x.com/paulg
-```
-
-更多示例见 [examples/prompts.md](examples/prompts.md)。
-
----
-
-## 工作流程
-
-这个 skill 的流程是：
-
-1. 读取一个或多个 X 博主主页链接
-2. 扫描博主近期推文
-3. 按浏览量智能筛选（10万+、50万+、100万+ 等档位）
-4. 提炼推文的核心主题和标签
-5. 为每条推文记录完整元数据
-6. 创建或更新 Obsidian 文件夹结构
-7. 生成 Markdown 文件并同步到 Obsidian
-8. 按采集日期、博主、主题建立索引
-9. 输出采集结果报告（数量、分类、保存路径）
-
----
-
-## 实际应用场景
-
-### 场景 1：找爆款选题
-
-建立：**爆款推文库**
-
-研究：
-- 标题怎么写
-- 开头怎么吸引
-- 整体结构
-- 最后的 CTA
-
-```text
-Use $X-to-Obsidian-SKill 
-
-抓取浏览量超过50万的推文，建立爆款推文库。
-按主题自动分类，方便后续拆解。
-```
-
-### 场景 2：做内容对标
-
-建立：**行业博主数据库**
-
-长期跟踪：
-- 他们发什么
-- 怎么发的
-- 什么内容最火
-
-```text
-Use $X-to-Obsidian-SKill 
-
-持续跟踪这些头部内容创作者，
-浏览量超过20万的推文都保存下来。
-```
-
-### 场景 3：产品增长研究
-
-建立：**Growth Library**
-
-沉淀：
-- 增长案例
-- 用户反馈
-- 产品发布策略
-
-```text
-Use $X-to-Obsidian-SKill 
-
-抓取这些 SaaS 创始人的推文，
-重点关注融资、增长、用户反馈相关内容。
-```
-
-### 场景 4：跟踪行业动态
-
-建立：**AI 行业知识库**
-
-持续积累：
-- 新产品发布
-- 融资新闻
-- 技术突破
-- 市场评论
-
-```text
-Use $X-to-Obsidian-SKill 
-
-定期抓取头部 AI 博主的内容，
-浏览量超过30万，建立 AI 行业观察库。
+X 博主链接
+      ↓
+获取推文
+      ↓
+按浏览量筛选
+      ↓
+只保留高表现内容
+      ↓
+Obsidian Web Clipper
+      ↓
+自动保存到 Obsidian
+      ↓
+长期知识沉淀
 ```
 
 ---
 
 ## 为什么做这个 Skill
 
-**问题：** 很多人收藏了几千条推文，但真正需要的时候根本找不到。
+很多人每天收藏大量推文：
 
-**根因：** 真正有价值的不是**收藏**本身，而是：
+* 爆款推文
+* AI案例
+* 创业经验
+* 增长技巧
+* 产品思考
 
-```
-筛选 → 归档 → 分类 → 沉淀
-```
+但真正需要的时候：
 
-**解决方案：** 这个 Skill 帮你把 X 上的高价值内容，自动沉淀进自己的知识库。
+* 找不到
+* 没分类
+* 没整理
+* 无法复盘
 
-不只是保存碎片信息，而是：
-- 智能过滤（按浏览量）
-- 自动分类（按主题）
-- 结构化记录（完整元数据）
-- 长期积累（可查可复用）
+这个 Skill 的目标不是帮你收藏推文。
 
-**最终结果：** 把推特信息流，变成自己的资产。
+而是帮助你：
 
----
-
-## 注意事项
-
-- X API 速率限制：每个博主最多扫描最近 3200 条推文
-- Obsidian Web Clipper 需要提前配置和启动
-- 浏览量数据来自 X 公开接口，实时性可能有 1-2 小时延迟
-- 推文被删除后无法重新采集
-- 推荐定期（周/月）运行，建立动态更新的素材库，而不是一次性全量采集
-- 每次采集前确认 Obsidian 目标文件夹已创建
+**发现高价值内容 → 自动归档 → 建立长期知识资产。**
 
 ---
 
-## 相关项目
+# 前置要求
 
-- [Ian Xiaohei Illustrations](https://github.com/helloianneo/ian-xiaohei-illustrations) — 中文正文配图 Skill
-- [Awesome Claude Code Skills](https://github.com/helloianneo/awesome-claude-code-skills) — Claude Code Skills 精选合集
+⚠️ 本 Skill 依赖官方 Obsidian Web Clipper。
+
+未安装 Web Clipper 时无法正常运行。
 
 ---
 
-## 目录结构
+## 1. 安装 Obsidian
+
+下载地址：
+
+https://obsidian.md
+
+安装后创建或打开一个 Vault。
+
+---
+
+## 2. 安装官方 Obsidian Web Clipper
+
+安装地址：
+
+https://obsidian.md/clipper
+
+支持：
+
+* Chrome
+* Edge
+* Brave
+* Arc
+* Dia
+* Chromium 系浏览器
+
+安装完成后请确认：
+
+* 插件已启用
+* 可以正常保存网页
+* Obsidian 已启动
+
+---
+
+## 3. 登录 X（Twitter）
+
+确保浏览器已登录 X 账号。
+
+Skill 会读取当前浏览器登录状态获取推文信息。
+
+---
+
+## 4. 打开目标 Obsidian Vault
+
+运行 Skill 前请确保：
 
 ```text
-.
-├── README.md
-├── LICENSE
-├── SKILL.md
-├── agents/
-│   └── openai.yaml
-├── scripts/
-│   └── fetch_tweets.py
-├── examples/
-│   ├── images/
-│   │   ├── 01-viral-tweets-example.png
-│   │   ├── 02-multi-author-organization.png
-│   │   ├── 03-obsidian-structure.png
-│   │   ├── 04-tweet-metadata.png
-│   │   └── 05-long-term-library.png
-│   └── prompts.md
-└── references/
-    ├── obsidian-setup.md
-    ├── x-api-guide.md
-    ├── workflow-best-practices.md
-    └── qa-checklist.md
+Obsidian 已启动
+
+目标 Vault 已打开
 ```
 
-真正需要安装到 Codex 的是：
-
-```text
-agents/
-scripts/
-references/
-SKILL.md
-```
-
-根目录的 README、LICENSE 和 examples 是 GitHub 分享文档。
+这样 Web Clipper 才能自动保存内容。
 
 ---
 
-## License
+# 核心能力
 
-MIT License. See [LICENSE](LICENSE).
+## 高浏览量筛选
+
+支持按照浏览量过滤：
+
+```text
+10万+
+20万+
+50万+
+100万+
+```
+
+只保留真正被市场验证过的内容。
+
+避免收集低价值推文。
+
+---
+
+## 多博主批量采集
+
+支持同时处理多个账号：
+
+```text
+https://x.com/levelsio
+
+https://x.com/dannypostmaa
+
+https://x.com/paulg
+```
+
+一次建立完整行业素材库。
+
+---
+
+## 自动同步到 Obsidian
+
+自动调用官方 Web Clipper：
+
+```text
+推文
+ ↓
+Web Clipper
+ ↓
+Markdown
+ ↓
+Obsidian
+```
+
+无需手动复制粘贴。
+
+---
+
+## 自动整理目录
+
+自动创建：
+
+```text
+📁 Levelsio
+ ├ AI Startup Ideas.md
+ ├ Build In Public.md
+
+📁 Danny Postma
+ ├ Growth Hack.md
+ ├ Product Launch.md
+```
+
+方便长期管理。
+
+---
+
+## 自动附加元数据
+
+每篇笔记自动记录：
+
+```yaml
+tweet_id:
+views:
+likes:
+retweets:
+author:
+handle:
+publish_time:
+tweet_url:
+```
+
+方便后续检索和分析。
+
+---
+
+## 长期知识沉淀
+
+最终形成：
+
+```text
+Obsidian
+
+├ AI
+├ SaaS
+├ Startup
+├ Marketing
+├ Growth
+└ Indie Hacker
+```
+
+把信息流变成资产。
+
+---
+
+# 使用方式
+
+## 单个博主
+
+```text
+抓取这个博主最近浏览量超过10万的推文
+
+https://x.com/levelsio
+```
+
+---
+
+## 指定保存数量
+
+```text
+抓取这个博主浏览量超过10万的推文
+
+保存前20篇
+```
+
+---
+
+## 多个博主
+
+```text
+抓取以下博主
+
+https://x.com/levelsio
+
+https://x.com/dannypostmaa
+
+https://x.com/paulg
+
+保存浏览量超过20万的内容
+```
+
+---
+
+## 建立行业知识库
+
+```text
+抓取这些 AI 博主
+
+保存浏览量超过50万的内容
+
+同步到 Obsidian
+```
+
+---
+
+# 适合谁
+
+### 内容创作者
+
+* 研究爆款选题
+* 分析内容结构
+* 拆解表达方式
+* 积累创作灵感
+
+---
+
+### 独立开发者
+
+* 研究产品发布
+* 分析增长案例
+* 收集创业经验
+* 跟踪行业趋势
+
+---
+
+### AI 创业者
+
+* 跟踪头部 AI 博主
+* 收集产品案例
+* 建立研究数据库
+* 沉淀市场认知
+
+---
+
+### 产品经理
+
+* 收集产品观点
+* 跟踪行业变化
+* 建立知识体系
+
+---
+
+### 增长运营
+
+* 建立竞品内容库
+* 分析高互动内容
+* 研究传播规律
+
+---
+
+# 工作原理
+
+```text
+输入博主链接
+      ↓
+获取推文列表
+      ↓
+按浏览量筛选
+      ↓
+排序高表现内容
+      ↓
+打开推文页面
+      ↓
+调用 Obsidian Web Clipper
+      ↓
+保存 Markdown
+      ↓
+归档到知识库
+```
+
+---
+
+# 示例
+
+### AI 博主研究
+
+```text
+抓取以下博主
+
+https://x.com/sama
+
+https://x.com/levelsio
+
+浏览量超过50万
+
+保存到 Obsidian
+```
+
+---
+
+### Startup 对标库
+
+```text
+建立 Startup 素材库
+
+抓取浏览量超过20万的内容
+
+自动同步到 Obsidian
+```
+
+---
+
+### Build In Public 研究
+
+```text
+抓取 Levelsio 最近一年
+
+浏览量超过10万的推文
+
+保存前30篇
+```
+
+---
+
+# 注意事项
+
+* 必须安装官方 Obsidian Web Clipper
+* 必须打开 Obsidian
+* 必须打开目标 Vault
+* 必须登录 X（Twitter）
+* 当前版本主要支持 Chromium 系浏览器
+* 推荐使用 Dia 浏览器
+
+---
+
+# License
+
+MIT
