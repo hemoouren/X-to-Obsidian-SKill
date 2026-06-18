@@ -1,0 +1,4 @@
+interface:
+  display_name: "X to Obsidian"
+  short_description: "批量抓取并归档 X 高浏览内容到 Obsidian"
+  default_prompt: "Use $x-to-obsidian to save high-view X posts into Obsidian with the official Web Clipper, asking only for missing required inputs."
